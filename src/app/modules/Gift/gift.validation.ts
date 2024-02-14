@@ -11,6 +11,10 @@ const createGiftValidationSchema = z.object({
         theme: z.string(),
         brand: z.string(),
         material: z.string(),
+        coupon: z.object({
+            couponCode: z.string(),
+            discountPercentage: z.number(),
+        }).optional(),
     })
 })
 const updateGiftValidationSchema = z.object({
@@ -25,6 +29,10 @@ const updateGiftValidationSchema = z.object({
         theme: z.string().optional(),
         brand: z.string().optional(),
         material: z.string().optional(),
+        coupon: z.object({
+            couponCode: z.string().optional(),
+            discountPercentage: z.number().optional(),
+        }).optional(),
     })
 })
 

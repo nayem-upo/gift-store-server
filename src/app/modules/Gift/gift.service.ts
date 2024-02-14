@@ -10,7 +10,7 @@ import { giftSearchableFields } from "./gift.constant";
 
 const createGiftIntoDb = async (payload: IGift, req: Request) => {
     const userId = (req.user as JwtPayload);
-    const { name, price, quantity, occasion, recipient, category, theme, brand, material } = payload;
+    const { name, price, quantity, occasion, recipient, category, theme, brand, material, coupon } = payload;
 
     if (price < 0) {
         throw new AppError(httpStatus.FORBIDDEN, "Price should greater than 0")
@@ -29,6 +29,7 @@ const createGiftIntoDb = async (payload: IGift, req: Request) => {
         theme,
         brand,
         material,
+        coupon,
         createdBy: userId
     }
     const result = await GiftModel.create(newGiftWithUserId);

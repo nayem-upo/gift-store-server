@@ -1,5 +1,10 @@
 import { Types } from "mongoose";
 
+interface ICoupon {
+    couponCode: string,
+    discountPercentage: number
+}
+
 export interface IGift extends Document {
     createdBy: Types.ObjectId;
     name: string;
@@ -11,6 +16,7 @@ export interface IGift extends Document {
     theme: string;
     brand: string;
     material: string;
+    coupon?: ICoupon
 }
 
 export type TQueryParams = {

@@ -13,6 +13,10 @@ const giftSchema = new Schema<IGift>({
     theme: { type: String, required: true },
     brand: { type: String, required: true },
     material: { type: String, required: true },
+    coupon: {
+        couponCode: { type: String },
+        discountPercentage: { type: Number },
+    },
 }, { timestamps: true });
 
 export const GiftModel = model<IGift>('Gift', giftSchema);

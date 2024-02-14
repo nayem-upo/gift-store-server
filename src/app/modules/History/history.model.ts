@@ -8,6 +8,7 @@ const historySchema = new Schema<IHistory>({
     quantity: { type: Number, required: true },
     date: { type: String, required: true },
     buyer: { type: String, required: true },
+    seller: { type: String, required: true },
 }, { timestamps: true });
 
 export const HistoryModel = model<IHistory>('History', historySchema);

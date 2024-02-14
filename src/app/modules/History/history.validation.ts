@@ -7,6 +7,7 @@ export const createHistorySchema = z.object({
         quantity: z.number(),
         date: z.string(),
         buyer: z.string(),
+        seller: z.string(),
     })
 });
 
