@@ -15,7 +15,7 @@ const giftSchema = new Schema<IGift>({
     material: { type: String, required: true },
     coupon: {
         couponCode: { type: String },
-        discountPercentage: { type: Number },
+        discountPercentage: { type: Number, required: true },
     },
 }, { timestamps: true });
 

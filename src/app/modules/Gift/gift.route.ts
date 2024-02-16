@@ -25,10 +25,12 @@ router.delete('/gifts/:giftId',
 );
 router.get('/gifts', checkJwt, GiftController.getGifts);
 router.get('/gifts/:giftId', checkJwt, GiftController.getSingleGift);
-router.delete('/gifts/bulk-delete',
+
+router.delete('/gift/bulk-delete',
     auth(USER_ROLE.manager),
     checkJwt, GiftController.deleteMultipleGifts
 );
+
 router.put('/gifts/:giftId',
     auth(USER_ROLE.manager, USER_ROLE.seller),
     checkJwt, isAuthenticated,
