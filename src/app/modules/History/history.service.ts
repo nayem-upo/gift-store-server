@@ -8,7 +8,7 @@ export interface CustomRequest extends Request {
 }
 const createHistoryIntoDb = async (payload: IHistory, req: CustomRequest) => {
     const userId = (req.user as JwtPayload)?._id;
-    const { name, price, quantity, buyer, date, seller } = payload;
+    const { name, price, quantity, buyer, date, seller, discountPercentage } = payload;
     const newGiftWithUserId = {
         createdBy: userId,
         name,
@@ -16,7 +16,8 @@ const createHistoryIntoDb = async (payload: IHistory, req: CustomRequest) => {
         quantity,
         date,
         buyer,
-        seller
+        seller,
+        discountPercentage
     }
     const result = await HistoryModel.create(newGiftWithUserId);
     return result;
