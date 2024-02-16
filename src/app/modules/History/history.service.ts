@@ -17,7 +17,6 @@ const createHistoryIntoDb = async (payload: IHistory, req: CustomRequest) => {
         date,
         buyer,
         seller,
-        discountPercentage
     }
     const result = await HistoryModel.create(newGiftWithUserId);
     return result;

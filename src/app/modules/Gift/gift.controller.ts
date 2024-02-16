@@ -5,7 +5,15 @@ import sendResponse from "../../utilities/sendResponse";
 import { GiftServices } from "./gift.service";
 import { IGift } from "./gift.interface";
 
-
+const createGift = catchAsync(async (req, res) => {
+    const result = await GiftServices.createGiftIntoDb(req.body, req);
+    sendResponse(res, {
+        statusCode: httpStatus.CREATED,
+        success: true,
+        message: 'Gift created successfully',
+        data: result,
+    });
+})
 
 const getGifts = catchAsync(async (req, res) => {
     try {
