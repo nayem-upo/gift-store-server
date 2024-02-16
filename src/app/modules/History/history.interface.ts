@@ -7,5 +7,6 @@ export interface IHistory extends Document {
     quantity: number;
     date: string,
     buyer: string,
-    seller: string
+    seller: string,
+    discountPercentage: number
 }
