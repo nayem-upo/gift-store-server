@@ -28,7 +28,7 @@ export const isAuthenticated = (req: Request, res: Response, next: NextFunction)
 
 
 
-// check if the user is manager 
+// check if the user is a manager 
 export const isManager = (req: Request, res: Response, next: NextFunction) => {
     const user: IUser = req.user as IUser;
 
@@ -39,7 +39,7 @@ export const isManager = (req: Request, res: Response, next: NextFunction) => {
         throw new UnauthorizedError(httpStatus.UNAUTHORIZED, "Unauthorized Access");
     }
 };
-// check if the user is an seller
+// check if the user is a seller
 export const isSeller = (req: Request, res: Response, next: NextFunction) => {
     const user: IUser = req.user as IUser;
 
